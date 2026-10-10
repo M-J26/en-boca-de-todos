@@ -4,7 +4,8 @@
   [class.open]="isOpen"
   (click)="toggleChat()"
   aria-label="Abrir asistente de chat">
-  Chat
+  <span class="chat-icon">✦</span>
+  <span class="chat-label">Chat</span>
 </button>
 
 <section class="chat-panel" *ngIf="isOpen">

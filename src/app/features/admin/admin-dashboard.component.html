@@ -1,21 +1,51 @@
 <section class="admin-shell">
-  <header class="admin-header">
-    <div>
-      <p class="eyebrow">Panel administrativo</p>
-      <h1>Control de pedidos</h1>
-      <p class="subtitle">
-        Gestiona pedidos entrantes, salientes y despacho con notificacion directa.
-      </p>
-      <small class="owner-copy">Sesion activa: {{ ownerName }}</small>
+  <aside class="admin-sidebar">
+    <div class="brand-panel">
+      <div class="brand-mark">EBT</div>
+      <div class="brand-copy">
+        <strong>En Boca de Todos</strong>
+        <small>Admin</small>
+      </div>
     </div>
 
-    <div class="header-actions">
-      <a routerLink="/" class="back-link">Volver al menu</a>
+    <nav class="admin-nav" aria-label="Navegación del administrador">
+      <button type="button" class="nav-item" [class.active]="activeSection === 'resumen'" (click)="selectSection('resumen')">
+        Resumen
+      </button>
+      <button type="button" class="nav-item" [class.active]="activeSection === 'pedidos'" (click)="selectSection('pedidos')">
+        Pedidos
+      </button>
+      <button type="button" class="nav-item" [class.active]="activeSection === 'notificaciones'" (click)="selectSection('notificaciones')">
+        Notificaciones
+      </button>
+      <button type="button" class="nav-item" [class.active]="activeSection === 'crm'" (click)="selectSection('crm')">
+        CRM
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small>Sesion activa</small>
+      <strong>{{ ownerName }}</strong>
       <button type="button" class="ghost-btn" (click)="logout()">Cerrar sesion</button>
     </div>
-  </header>
+  </aside>
 
-  <div class="stats-grid">
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-intro">
+        <p class="eyebrow">Panel administrativo</p>
+        <h1>Control de pedidos</h1>
+        <p class="subtitle">
+          Gestiona pedidos entrantes, salientes y despacho con notificacion directa.
+        </p>
+      </div>
+
+      <div class="header-status">
+        <span class="live-badge">En vivo</span>
+      </div>
+    </header>
+
+    <div id="resumen" class="stats-grid">
     <article class="stat-card">
       <span>Entrantes</span>
       <strong>{{ incomingOrders.length }}</strong>
@@ -59,7 +89,7 @@
     </article>
   </div>
 
-  <div class="admin-grid">
+  <div id="pedidos" class="admin-grid">
     <section class="board">
       <div class="board-header">
         <h2>Pedidos entrantes</h2>
@@ -178,7 +208,7 @@
       </article>
     </section>
 
-    <aside class="notifications-panel">
+    <aside id="notificaciones" class="notifications-panel">
       <div class="board-header">
         <h2>Notificaciones</h2>
         <span>{{ notifications.length }}</span>
@@ -205,7 +235,7 @@
     </aside>
   </div>
 
-  <section class="crm-workspace">
+  <section id="crm" class="crm-workspace">
     <div class="board-header">
       <div>
         <p class="eyebrow">CRM escalable</p>
@@ -285,4 +315,5 @@
       </article>
     </section>
   </section>
+  </main>
 </section>
