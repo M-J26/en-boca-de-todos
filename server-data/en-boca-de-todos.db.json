@@ -2,7 +2,7 @@
   "version": 1,
   "meta": {
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-01T11:33:30.122Z",
+    "updatedAt": "2026-10-10T19:44:04.041Z",
     "restaurantName": "EN BOCA DE TODOS",
     "country": "Ecuador",
     "currency": "USD"
@@ -22,14 +22,23 @@
       "updatedAt": "2026-04-29T00:00:00.000Z"
     }
   ],
-  "adminChallenges": [],
+  "adminChallenges": [
+    {
+      "id": "adm-challenge-348e5a81-4589-4901-b179-8cad1caab570",
+      "adminId": "admin-primary",
+      "username": "admin",
+      "attempts": 0,
+      "createdAt": "2026-10-10T19:43:42.327Z",
+      "expiresAt": "2026-10-10T19:48:42.327Z"
+    }
+  ],
   "adminSessions": [
     {
-      "id": "adm-session-d9022a39-7319-4c12-b679-12deae77bd9d",
+      "id": "adm-session-5de24301-b4df-4b8f-b211-1d9882b5abc1",
       "adminId": "admin-primary",
-      "token": "adm-token-008bd2dd-f2fd-4cba-82f1-189726596a2b",
-      "createdAt": "2026-05-01T11:33:30.122Z",
-      "expiresAt": "2026-05-01T19:33:30.122Z"
+      "token": "adm-token-7257a0a8-af55-4889-b245-95606d585fd9",
+      "createdAt": "2026-10-10T19:44:04.041Z",
+      "expiresAt": "2026-10-11T03:44:04.041Z"
     }
   ],
   "orders": [
@@ -957,6 +966,36 @@
     }
   ],
   "auditLogs": [
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.confirmed",
+      "entity": "admin_session",
+      "entityId": "adm-session-5de24301-b4df-4b8f-b211-1d9882b5abc1",
+      "detail": "Sesion administrativa iniciada.",
+      "id": "audit-52735126-33ad-431d-9df4-a0e357311d44",
+      "createdAt": "2026-10-10T19:44:04.041Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.challenge_created",
+      "entity": "admin",
+      "entityId": "admin-primary",
+      "detail": "Credenciales validadas, codigo de confirmacion requerido.",
+      "id": "audit-0da29862-1c44-4051-b110-39a04ca81112",
+      "createdAt": "2026-10-10T19:43:57.718Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.challenge_created",
+      "entity": "admin",
+      "entityId": "admin-primary",
+      "detail": "Credenciales validadas, codigo de confirmacion requerido.",
+      "id": "audit-9ff9210f-946a-46b4-8a33-1f6849e61e30",
+      "createdAt": "2026-10-10T19:43:42.328Z"
+    },
     {
       "actorType": "admin",
       "actorId": "admin-primary",

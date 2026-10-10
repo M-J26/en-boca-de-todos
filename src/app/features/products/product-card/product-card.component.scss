@@ -4,33 +4,34 @@
   flex-direction: column;
   gap: 16px;
   padding: 18px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, var(--paper), #f7fbff);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(238, 246, 255, 0.96));
   border: 1px solid var(--border-soft);
   box-shadow: 0 16px 34px var(--shadow-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 40px rgba(11, 40, 101, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 22px 40px rgba(11, 40, 101, 0.16);
 }
 
 .media {
   display: grid;
   place-items: center;
-  min-height: 250px;
-  max-height: 250px;
-  border-radius: 20px;
+  min-height: 240px;
+  max-height: 240px;
+  border-radius: 22px;
   overflow: hidden;
   background:
     radial-gradient(circle at top left, rgba(255, 203, 31, 0.18), transparent 32%),
     linear-gradient(135deg, #eef6ff, #dff1ff);
+  border: 1px solid rgba(41, 169, 255, 0.08);
 }
 
 .media img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 220px;
+  max-height: 220px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -55,16 +56,19 @@
 .category {
   font-size: 0.72rem;
   color: var(--red-500);
+  font-weight: 800;
 }
 
 .content h4 {
   color: var(--navy-950);
-  font-size: 1.12rem;
+  font-size: 1.15rem;
+  line-height: 1.4;
 }
 
 .content p {
   color: var(--text-700);
   font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .footer {
@@ -77,12 +81,14 @@
 
 .footer strong {
   color: var(--red-700);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 .footer button {
   background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
   color: var(--navy-950);
+  box-shadow: 0 12px 24px rgba(255, 203, 31, 0.22);
 }
 
 .bump {

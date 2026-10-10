@@ -1,44 +1,95 @@
 <section class="landing-shell">
   <header class="topbar">
     <div class="brand">
-      <h1 class="brand-title">En Boca de Todos</h1>
+      <div class="brand-mark">
+        <img alt="Logo En Boca de Todos" src="/Fondo1.png" class="brand-mark-image" />
+      </div>
+
+      <div class="brand-copy">
+        <span class="brand-kicker">Sabor que cruza fronteras</span>
+        <h1 class="brand-title">En Boca de Todos</h1>
+      </div>
     </div>
 
-    <nav>
-      <button type="button" class="ghost-link" (click)="goToMenu()">Menu</button>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#menu-section" class="ghost-link" (click)="goToMenu()">Menú</a>
       <a routerLink="/admin/login" class="solid-link">Admin</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-copy">
-      <p class="hero-kicker">Quito - delivery y retiro</p>
+      <div class="pill-row">
+        <span class="hero-badge">Quito • delivery</span>
+        <span class="hero-badge accent">Fusión ecuatoriana + colombiana</span>
+      </div>
+
       <h1 class="hero-title">
-        El sabor de dos paises fusionados en una sola experiencia
+        El sabor de dos países en una sola experiencia irresistible.
       </h1>
+
+      <p class="hero-text">
+        Una propuesta gastronómica vibrante, con sabores auténticos, entrega ágil y una identidad visual
+        que hace que cada pedido se sienta especial desde el primer vistazo.
+      </p>
 
       <div class="hero-actions">
         <button type="button" class="primary-cta" (click)="goToMenu()">
           Ordenar ahora
         </button>
-        <a routerLink="/admin/login" class="secondary-cta">Ver panel admin</a>
+        <a routerLink="/admin/login" class="secondary-cta">Panel admin</a>
       </div>
+
+      <ul class="hero-metrics" aria-label="Indicadores de servicio">
+        <li>
+          <strong>18–25 min</strong>
+          <span>Entrega</span>
+        </li>
+        <li>
+          <strong>100%</strong>
+          <span>Calidez</span>
+        </li>
+        <li>
+          <strong>4.9/5</strong>
+          <span>Clientes</span>
+        </li>
+      </ul>
     </div>
 
     <div class="hero-panel">
-      <article>
-        <span>Pedidos centralizados</span>
+      <article class="panel-stat">
+        <span>Pedidos del día</span>
         <strong>{{ recentOrders.length || 0 }}</strong>
+        <small>Clientes activos</small>
       </article>
-      <article>
+
+      <article class="panel-stat alt">
         <span>Notificaciones</span>
         <strong>{{ customerNotifications.length || 0 }}</strong>
+        <small>Seguimiento en vivo</small>
       </article>
-      <article class="brand-showcase">
-        <img alt="Logo En Boca de Todos" src="/Fondo1.png" class="brand-logo">
-        <h2 class="brand-title">En Boca de Todos</h2>
-      </article>
+
     </div>
+  </section>
+
+  <section class="feature-grid" aria-label="Beneficios">
+    <article class="feature-card">
+      <span class="feature-icon">🔥</span>
+      <h3>Ingredientes auténticos</h3>
+      <p>Recetas con identidad, tradición y un toque que conecta con la gente.</p>
+    </article>
+
+    <article class="feature-card">
+      <span class="feature-icon">⚡</span>
+      <h3>Entrega rápida</h3>
+      <p>Experiencia clara, ágil y cercana para que cada pedido llegue sin fricción.</p>
+    </article>
+
+    <article class="feature-card">
+      <span class="feature-icon">🌎</span>
+      <h3>Fusión cultural</h3>
+      <p>Un concepto que celebra la mezcla de sabores y la comunidad que lo disfruta.</p>
+    </article>
   </section>
 
   <section class="status-section" *ngIf="recentOrders.length || customerNotifications.length">
@@ -81,7 +132,8 @@
   <section id="menu-section" class="menu-section">
     <div class="section-heading">
       <div>
-        <h2>Menu</h2>
+        <p class="hero-kicker">Descubre</p>
+        <h2>Menú destacado</h2>
       </div>
     </div>
 
@@ -103,7 +155,7 @@
           [id]="cat">
           <div class="category-head">
             <div>
-              <p class="hero-kicker">Categoria</p>
+              <p class="hero-kicker">Categoría</p>
               <h3>{{ cat }}</h3>
             </div>
             <span>{{ groupedProducts[cat].length }} productos</span>
