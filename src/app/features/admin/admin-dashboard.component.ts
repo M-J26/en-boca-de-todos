@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { AdminAuthService } from '../../core/services/admin-auth.service';
 import { CrmService } from '../../core/services/crm.service';
 import { OrderStoreService } from '../../core/services/order-store.service';
@@ -17,7 +17,7 @@ import { Order, OrderStatus } from '../../models/order.model';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss']
 })
@@ -30,6 +30,7 @@ export class AdminDashboardComponent {
   opportunities: CrmOpportunity[] = [];
   activities: CrmActivity[] = [];
   ownerName = '';
+  activeSection: 'resumen' | 'pedidos' | 'notificaciones' | 'crm' = 'resumen';
 
   constructor(
     private readonly orderStore: OrderStoreService,
@@ -169,6 +170,15 @@ export class AdminDashboardComponent {
       dateStyle: 'medium',
       timeStyle: 'short'
     }).format(new Date(date));
+  }
+
+  selectSection(section: 'resumen' | 'pedidos' | 'notificaciones' | 'crm') {
+    this.activeSection = section;
+    const target = document.getElementById(section);
+
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   markAsRead(notificationId: string) {

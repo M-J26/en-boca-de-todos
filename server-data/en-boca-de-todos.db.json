@@ -2,7 +2,7 @@
   "version": 1,
   "meta": {
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-10-10T19:44:04.041Z",
+    "updatedAt": "2026-10-10T20:10:17.263Z",
     "restaurantName": "EN BOCA DE TODOS",
     "country": "Ecuador",
     "currency": "USD"
@@ -32,15 +32,7 @@
       "expiresAt": "2026-10-10T19:48:42.327Z"
     }
   ],
-  "adminSessions": [
-    {
-      "id": "adm-session-5de24301-b4df-4b8f-b211-1d9882b5abc1",
-      "adminId": "admin-primary",
-      "token": "adm-token-7257a0a8-af55-4889-b245-95606d585fd9",
-      "createdAt": "2026-10-10T19:44:04.041Z",
-      "expiresAt": "2026-10-11T03:44:04.041Z"
-    }
-  ],
+  "adminSessions": [],
   "orders": [
     {
       "id": "ord-2rail7pn",
